@@ -38,6 +38,7 @@ The runner compares a baseline (2 epochs, sequence length 100, 128 hidden units)
 
 - `train.py` — fetches and preprocesses text, builds/trains the LSTM, and generates text.
 - `run_experiments.ps1` — runs the controlled parameter comparisons and saves logs.
+- `EXPERIMENT-RESULTS.md` — records the measured losses and sample comparisons.
 - `requirements.txt` — Python dependency.
 - `data/` — downloaded training corpus (ignored by Git).
 - `experiment-results/` — saved training outputs from the comparison runner.
