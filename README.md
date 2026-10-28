@@ -26,19 +26,20 @@ The script downloads the public-domain Tiny Shakespeare corpus on its first run 
 
 ## Experiments
 
-Try changing one argument at a time and compare the printed loss and generated sample:
+Run a controlled comparison that changes sequence length, hidden units, and epochs. Each run writes its terminal output to a separate log in `experiment-results/`:
 
 ```powershell
-python train.py --epochs 20 --seq-length 80 --hidden-size 128 --seed "JULIET:"
-python train.py --epochs 20 --seq-length 120 --hidden-size 256 --seed "To be, or not to be:"
+.\run_experiments.ps1
 ```
 
-Short runs demonstrate the workflow; use more epochs for better output. This is character-level generation, so the model predicts the next character rather than the next word.
+The runner compares a baseline (2 epochs, sequence length 100, 128 hidden units) with one change at a time. These short runs demonstrate the effect of each setting; increase the epoch counts for better output. This is character-level generation, so the model predicts the next character rather than the next word.
 
 ## Project files
 
 - `train.py` — fetches and preprocesses text, builds/trains the LSTM, and generates text.
+- `run_experiments.ps1` — runs the controlled parameter comparisons and saves logs.
 - `requirements.txt` — Python dependency.
 - `data/` — downloaded training corpus (ignored by Git).
+- `experiment-results/` — saved training outputs from the comparison runner.
 
 After you have run the implementation successfully, initialize Git in this folder and publish it as its own GitHub repository, following the same layout as the Week-04 example. Keep the report for a later step.
